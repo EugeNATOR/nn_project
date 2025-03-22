@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+{% block style %}{% endblock %}
+{% block content %}
+    [[ statuses ]]
+    [[ applications ]]
+    <div class="wrapper">
+        <div class="applications">
+            {% for application in applications %}
+                <div class="application">
+                    <p class="car_number">
+                        Госномер: {{ application.car_number }}
+                    </p>
+                    <p class="description">
+                        Описание: {{ application.description }}
+                    </p>
+                    <p class="status">
+                        Статус: {{ application.title }}
+                    </p>
+                    <div class="images">
+                        <div class="image">
+                            <a href="">
+                                <img src="" height="50">
+                            </a>
+                        </div>
+                        <div class="image">
+                            <a href="">
+                                <img src="" height="50">
+                            </a>
+                        </div>
+                    </div>
+                    <form method="post">
+                        <select>
+                            {% for status in statuses %}
+                                <option>{{ status.title }}</option>
+                            {% endfor %}
+                        </select>
+                        <button type="submit">OK</button>
+                    </form>
+                    <hr>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

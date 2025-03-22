@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Регистрация{% endblock %}
+{% block style %}{% endblock %}
+{% block content %}
+        <div class="wrapper">
+            <form method="post">
+                <input type="text" placeholder="Имя">
+                <input type="text" placeholder="Фамилия">
+                <input type="text" placeholder="Отчество">
+                <input type="email" placeholder="email">
+                <input type="tel" placeholder="Номер телефона">
+                <input type="text" placeholder="Логин">
+                <input type="password" placeholder="Пароль">
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+{% endblock %}
